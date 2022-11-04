@@ -1,0 +1,73 @@
+.config-btn-menu {
+    height:  42px;
+    width: 42px;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    border-radius: 32px;
+    z-index: 1;
+}
+
+#btn-menu {
+    background-color: var(--black);
+    backdrop-filter: blur(5px);
+}
+
+#btn-menu::before {
+    content: url(../icons/icon-menu.svg);
+}
+
+#btn-close-menu{
+    background-color: var(--white);
+    display: none;
+}
+
+#btn-close-menu::before {
+    content: url(../icons/icon-close-menu.svg);
+}
+
+.menu-container {
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    background-color: var(--white);
+    box-shadow: 0px 0px 5px rgba(238, 238, 238, 0.8);
+    z-index: 1;
+    padding-top: 25vh;
+    transition: 1s;
+}
+
+.menu-links-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.menu-link {
+    display: block;
+    align-self: center;
+    padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .menu-container {
+        right: auto;
+        width: 1024px;
+        height: 80px;
+        padding: 2rem 6rem;
+        transition: none;
+    }
+
+    .menu-links-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu-link {
+        display: inline;
+    }
+}
